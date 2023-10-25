@@ -271,6 +271,10 @@
     transition: $main-transition;
     z-index: 4;
 
+    @media screen and (max-width:$screen-lg) {
+      opacity: 1;
+    }
+
     .name{
       font-size: 15px;
       margin-bottom: 7px;

@@ -3725,6 +3725,11 @@ html[lang=ar] .vision_img_box .content {
   transition: all 0.3s ease;
   z-index: 4;
 }
+@media screen and (max-width: 992px) {
+  .team_card .content {
+    opacity: 1;
+  }
+}
 .team_card .content .name {
   font-size: 15px;
   margin-bottom: 7px;
