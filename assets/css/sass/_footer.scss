@@ -1,0 +1,190 @@
+.footer {
+  padding: 40px 0;
+  background-color: $white;
+  position: relative;
+  z-index: 3;
+  border-top: 25px solid $main;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: $sec, $alpha: 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .footer_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+  .foot-content {
+    .footer-head {
+      margin-bottom: 30px;
+      font-size: 18px;
+      color: $white;
+      width: fit-content;
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 15px;
+      }
+    }
+
+    .foot-logo {
+      max-width: 80px;
+      max-height: 90px;
+      margin-inline-start: auto;
+      
+      @media screen and (max-width:$screen-lg) {
+        margin-inline-start: 0;
+      }
+
+      @media screen and (max-width: $screen-sm) {
+        max-width: 65px;
+        max-height: 85px;
+      }
+    }
+
+    .footer-info {
+      font-size: 15px;
+      color: $white;
+      line-height: 1.6;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    .mail_form {
+      display: flex;
+      // align-items: center;
+      .sm-btn {
+        height: 48px;
+      }
+
+      .main-btn {
+        height: 48px;
+        min-width: 75px;
+      }
+
+      .main-input {
+        width: 220px;
+      }
+    }
+
+    .footer-links {
+      .link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+        width: fit-content;
+        color: $white;
+        transition: $main-transition;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: transparent;
+        position: relative;
+        @include dir-padding-left(17px);
+
+        span {
+          font-weight: 500;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          @include circle(10px);
+          background-color: $white;
+          top: 50%;
+          transform: translateY(-50%);
+          @include dir-left(0);
+        }
+
+        &:hover {
+          #{$ltr} & {
+            transform: translateX(5px);
+          }
+          #{$rtl} & {
+            transform: translateX(-5px);
+          }
+          color: $main;
+        }
+
+        .ic {
+          max-width: 17px;
+          max-height: 17px;
+
+          // #{$ltr} & {
+          //     transform: rotate(180deg);
+          // }
+
+          &.app-link {
+            max-width: 220px;
+            height: 55px;
+            border-radius: 5px;
+          }
+        }
+
+        @media screen and (max-width: $screen-md) {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .foot-social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .social-icon {
+        @include circle(37px);
+        @include center;
+        background-color: $main;
+
+        .social-ic {
+          transition: $main-transition;
+          max-width: 18px;
+          max-height: 20px;
+        }
+
+        &:hover {
+          .social-ic {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.copy-right {
+  background-color: $main;
+  padding: 10px 0;
+
+  .copy-content {
+    @include between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @media screen and (max-width: $screen-sm) {
+      justify-content: center;
+    }
+
+    .text {
+      font-size: 14px;
+      color: $white;
+
+      .link {
+        text-decoration: underline;
+        color: $white;
+      }
+    }
+  }
+}
